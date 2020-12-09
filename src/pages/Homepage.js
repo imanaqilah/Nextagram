@@ -13,6 +13,7 @@ function Homepage() {
     const [isLoading, setIsLoading] = useState(true);
 
     console.log("Im gonna delete this")
+    console.log("")
 
     useEffect(() => {
         // axios.get() returns a promise. 
