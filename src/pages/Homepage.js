@@ -12,10 +12,6 @@ function Homepage() {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    console.log("HELLOLOLO")
-    console.log("THIS IS MY NEW BRANCH")
-    console.log("hasfjsafasjfasiuf")
-
     useEffect(() => {
         // axios.get() returns a promise. 
         // We handle the result of the GET request with .then and .catch.
