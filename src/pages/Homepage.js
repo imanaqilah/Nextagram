@@ -12,9 +12,7 @@ function Homepage() {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    console.log("HELLOLOLO")
-    console.log("THIS IS MY NEW BRANCH")
-    console.log("hasfjsafasjfasiuf")
+    console.log("Im gonna delete this")
 
     useEffect(() => {
         // axios.get() returns a promise. 
