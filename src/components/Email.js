@@ -16,6 +16,7 @@ const Email = ({ email, setEmail }) => {
     }
 
     const checkEmail = currentEmail => {
+        console.log(isEmail(currentEmail))
         if (isEmail(currentEmail)) {
             setEmailValid(true)
         } else {
@@ -29,16 +30,20 @@ const Email = ({ email, setEmail }) => {
         if (!email.length) {
             return null;
         }
+        
         if (emailValid) {
             return { valid: true };
         } else {
-            return { invalid: true }
+            return { invalid: true };
         }
     };
 
     const getEmailFormFeedback = () => {
         if (!email.length) {
             return null;
+        }
+        if (email.length <= 6) {
+            return <FormFeedback invalid>The email is invalid</FormFeedback>
         }
 
         if (emailValid) {
