@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardImg, CardBody, CardTitle, Button } from 'reactstrap';
+import { CardImg, CardBody } from 'reactstrap';
 import { Link } from "react-router-dom";
 import UserImage from '../components/UserImage.js';
 import axios from 'axios';
@@ -11,9 +11,6 @@ import LoadingIndicator from '../components/LoadingIndicator.js';
 function Homepage() {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
-    console.log("Im gonna delete this")
-    console.log("")
 
     useEffect(() => {
         // axios.get() returns a promise. 

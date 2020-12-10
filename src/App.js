@@ -4,12 +4,24 @@ import { Route } from "react-router-dom";
 import UserProfilePage from '../src/pages/UserProfilePage.js';
 import NaviBar from '../src/components/NaviBar.js';
 import { ToastContainer } from 'react-toastify';
+import { useState } from 'react';
+import MyProfilePage from "./pages/MyProfilePage.js"
 
-function App() {
+function App({ user, setUser }) {
+  /** 
+   * The default boolean for loggedIn state would be
+   * determined by whether JWT exists in localStorage
+  */
+  const [loggedIn, setLoggedIn] = useState(
+    localStorage.getItem('jwt') !== null
+  );
+
   return (
     <div>
-      <NaviBar />
+      <NaviBar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
 
+      {/* onClick={() => {
+        setIsLogin(true) */}
       {/* <Link to="/">Home</Link> */}
       {/* We temporarily hardcode this to user id 1 */}
       {/* <Link to="/profile">My Profile</Link> */}
@@ -23,6 +35,9 @@ function App() {
       </Route>
       <Route path="/users">
         <Homepage />
+      </Route>
+      <Route exact path="/profile">
+        <MyProfilePage user={user} setUser={setUser} />
       </Route>
       <ToastContainer />
     </div>

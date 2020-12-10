@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal } from 'reactstrap';
 import LoginForm from './LoginForm.js';
 import SignUpForm from './SignUpForm.js';
 
 // const ModalForm = ({ isOpen, isLogin, toggle, toggleIsLogin }) => {
-const ModalForm = ({ isOpen, toggle, toggleIsLogin, isLogin }) => {
+const ModalForm = ({ isOpen, toggle, toggleIsLogin, isLogin, setLoggedIn }) => {
 
     return (
         <Modal isOpen={isOpen} toggle={toggle}>
             {
                 isLogin
-                    ? <LoginForm toggle={toggle} toggleIsLogin={toggleIsLogin} />
-                    : <SignUpForm toggle={toggle} toggleIsLogin={toggleIsLogin} />
+                    ? <LoginForm toggle={toggle} toggleIsLogin={toggleIsLogin} setLoggedIn={setLoggedIn} />
+                    : <SignUpForm toggle={toggle} toggleIsLogin={toggleIsLogin} setLoggedIn={setLoggedIn} />
             }
         </Modal>
     )

@@ -1,10 +1,7 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, CardImg, CardBody, CardTitle } from 'reactstrap';
-import LoadingIndicator from '../components/LoadingIndicator.js';
-import Placeholder from './Placeholder.js';
 import Image from 'react-graceful-image';
-import logo from '../assets/Spinner-1s-200px.gif';
+
 
 const UserImage = ({ userId }) => {
 
