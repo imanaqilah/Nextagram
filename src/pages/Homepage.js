@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardImg, CardBody, CardTitle, Button } from 'reactstrap';
+import { CardImg, CardBody } from 'reactstrap';
 import { Link } from "react-router-dom";
 import UserImage from '../components/UserImage.js';
 import axios from 'axios';

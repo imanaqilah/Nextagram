@@ -13,9 +13,10 @@ import {
     Input,
     Button
 } from 'reactstrap';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify'
 
-const NaviBar = () => {
+const NaviBar = ({ loggedIn, setLoggedIn }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const [isLogin, setIsLogin] = useState(true);
@@ -26,6 +27,8 @@ const NaviBar = () => {
 
     const [nameInput, setNameInput] = useState("");
 
+    const [showModal, setShowModal] = useState(false)
+
     const toggleModal = () => {
         setShowModal(!showModal)
     }
@@ -35,7 +38,21 @@ const NaviBar = () => {
         setIsLogin(!isLogin)
     }
 
-    const [showModal, setShowModal] = useState(false)
+    const handleLogout = () => {
+        localStorage.removeItem('jwt')
+        setLoggedIn(false)
+        toast.info("You are logged out", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        history.push("/")
+    }
+
 
     //  This is for the "Search Username" form
     const handleSubmit = (e) => {
@@ -61,11 +78,16 @@ const NaviBar = () => {
                         <NavItem>
                             {/* LOGIN MODAL */}
                             {/* <ModalForm isLogin={isLogin} setIsLogin={setIsLogin}>Sign In</ModalForm> */}
-                            <NavLink style={{ cursor: "pointer" }} onClick={() => { toggleModal(); setIsLogin(true) }}>Sign In</NavLink>
+                            {
+                                loggedIn ?
+                                    <NavLink style={{ cursor: "pointer" }} onClick={() => handleLogout()}>Log out</NavLink>
+                                    :
+                                    <NavLink style={{ cursor: "pointer" }} onClick={() => { toggleModal(); setIsLogin(true) }} >Log in</NavLink>
+                            }
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                             <NavLink href="/components/">Sign Up</NavLink>
-                        </NavItem>
+                        </NavItem> */}
                     </Nav>
                 </Collapse>
             </Navbar>
@@ -81,6 +103,7 @@ const NaviBar = () => {
                 isOpen={showModal}
                 toggle={toggleModal}
                 toggleIsLogin={toggleIsLogin}
+                setLoggedIn={setLoggedIn}
                 isLogin={isLogin}
             />
         </div>

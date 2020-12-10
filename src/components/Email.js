@@ -30,11 +30,10 @@ const Email = ({ email, setEmail }) => {
         if (!email.length) {
             return null;
         }
-        
         if (emailValid) {
             return { valid: true };
         } else {
-            return { invalid: true };
+            return { invalid: true }
         }
     };
 
@@ -42,14 +41,11 @@ const Email = ({ email, setEmail }) => {
         if (!email.length) {
             return null;
         }
-        if (email.length <= 6) {
-            return <FormFeedback invalid>The email is invalid</FormFeedback>
-        }
 
         if (emailValid) {
             return <FormFeedback valid></FormFeedback>
         } else {
-            return <FormFeedback invalid></FormFeedback>
+            return <FormFeedback invalid>The email is invalid</FormFeedback>
         }
     };
 
