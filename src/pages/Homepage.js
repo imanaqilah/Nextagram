@@ -38,7 +38,7 @@ function Homepage() {
             {
                 users.map(user => {
                     return (
-                        <div key={user.id} className="row" style={{ backgroundColor: "lavender", marginBottom: "10px" }}>
+                        <div key={user.id} className="row" style={{ backgroundColor: "#2A1B3D", marginBottom: "10px" }}>
                             <div className="col-2">
                                 <CardImg src={user.profileImage} style={{ width: "40%", border: "3px solid white", margin: "5px" }} />
 

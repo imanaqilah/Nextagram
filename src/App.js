@@ -6,8 +6,9 @@ import NaviBar from '../src/components/NaviBar.js';
 import { ToastContainer } from 'react-toastify';
 import { useState } from 'react';
 import MyProfilePage from "./pages/MyProfilePage.js"
+import UploadPage from './pages/UploadPage.js';
 
-function App({ user, setUser }) {
+function App() {
   /** 
    * The default boolean for loggedIn state would be
    * determined by whether JWT exists in localStorage
@@ -37,8 +38,9 @@ function App({ user, setUser }) {
         <Homepage />
       </Route>
       <Route exact path="/profile">
-        <MyProfilePage user={user} setUser={setUser} />
+        <MyProfilePage />
       </Route>
+      <Route exact path="/upload" component={UploadPage}></Route>
       <ToastContainer />
     </div>
   )
