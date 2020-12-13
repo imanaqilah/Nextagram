@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { CardImg, CardBody } from 'reactstrap';
 import { Link } from "react-router-dom";
 import UserImage from '../components/UserImage.js';
 import axios from 'axios';
@@ -41,13 +40,7 @@ function Homepage() {
                         <div key={user.id} className="row border border-0 mb-3 pt-3 pb-3 rounded">
                             <div className="col-2" style={{ backgroundColor: "#eee2dc" }}>
                                 <Link className="mt-2" to={`/profile/${user.id}`}>{user.username}</Link>
-                                <img className="profile-image-avatar rounded-circle" src={user.profileImage} />
-
-                                {/* <CardBody>
-                            <CardTitle>{user.username}</CardTitle>
-                            
-                            <Button onClick={press} color="primary">See More</Button>{' '}
-                        </CardBody> */}
+                                <img className="profile-image-avatar rounded-circle" src={user.profileImage} alt="profile-avatar" />
                             </div>
                             <div className="col" style={{ backgroundColor: "#ffffff" }}>
                                 <div className="row">
