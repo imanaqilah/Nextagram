@@ -56,7 +56,7 @@ const SignUpForm = ({ toggleIsLogin, toggle }) => {
     }
 
     return (
-        <div>
+        <div style={{ color: "black" }}>
             <Form>
                 <ModalHeader toggle={toggle}>Sign Up</ModalHeader>
                 <ModalBody>
