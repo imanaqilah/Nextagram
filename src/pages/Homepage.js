@@ -37,12 +37,14 @@ function Homepage() {
             {
                 users.map(user => {
                     return (
-                        <div key={user.id} className="row border border-0 mb-3 pt-3 pb-3 rounded">
-                            <div className="col-2" style={{ backgroundColor: "#eee2dc" }}>
-                                <Link className="mt-2" to={`/profile/${user.id}`}>{user.username}</Link>
-                                <img className="profile-image-avatar rounded-circle" src={user.profileImage} alt="profile-avatar" />
+                        <div key={user.id} className="row border border-0 pt-3 pb-1 rounded">
+                            <div className="col-2" style={{ backgroundColor: "#c4dbf6" }}>
+                                <div className="mt-3">
+                                    <Link className="font-weight-bold" to={`/profile/${user.id}`}>{user.username}</Link>
+                                </div>
+                                <img className="profile-image-avatar rounded-circle mt-4" src={user.profileImage} alt="profile-avatar" />
                             </div>
-                            <div className="col" style={{ backgroundColor: "#ffffff" }}>
+                            <div className="col" style={{ backgroundColor: "#e6f2ff" }}>
                                 <div className="row">
                                     <UserImage userId={user.id} />
                                 </div>

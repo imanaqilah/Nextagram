@@ -24,13 +24,15 @@ const MyProfilePage = () => {
                 console.log(error) // so that we know what went wrong if the request failed
             })
     }, [])
-    console.log(user.id)
 
     return (
         <div className="container-fluid">
             <div className="row mb-5">
-                <div className="col-sm-4 mt-2">
-                    <h3>This is @{user.username}'s Profile Page</h3>
+                <div className="col-sm-3 mt-2">
+                    <img className="profile-image-avatar rounded-circle mt-5" src={user.profile_picture} alt="profile-avatar" />
+                </div>
+                <div className="col-sm-3 mt-4">
+                    <h3>@{user.username}</h3>
                     <Button onClick={() => { history.push("/upload") }}>Upload Images</Button>
                 </div>
             </div>

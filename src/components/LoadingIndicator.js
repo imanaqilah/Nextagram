@@ -1,4 +1,4 @@
-import logo from '../assets/Spinner-1s-200px.gif';
+import logo from '../assets/Spinner2-1s-200px.gif';
 
 const LoadingIndicator = () => {
 

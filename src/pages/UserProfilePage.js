@@ -1,5 +1,5 @@
 import UserImage from '../components/UserImage.js'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { CardImg, CardBody } from 'reactstrap';
@@ -16,6 +16,7 @@ const UserProfilePage = () => {
             .then(result => {
                 // passing result.data to useState array []
                 setUser(result.data)
+                console.log(result.data)
             })
             .catch(error => {
                 console.log(error)
@@ -32,7 +33,8 @@ const UserProfilePage = () => {
                 <div className="col-sm-3">
                     <CardBody>
                         {/* <CardTitle>{user.username}</CardTitle> */}
-                        <Link to={`/profile/${user.id}`}>{user.username}</Link>
+                        <h3 className="font-weight-bold">@{user.username}</h3>
+                        {/* <Link className="font-weight-bold" to={`/profile/${user.id}`}>@{user.username}</Link> */}
                     </CardBody>
                 </div>
             </div>

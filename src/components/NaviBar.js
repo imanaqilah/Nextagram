@@ -67,12 +67,22 @@ const NaviBar = ({ loggedIn, setLoggedIn }) => {
 
     return (
         <div>
-            <div className="container-fluid d-flex justify-content-between" style={{ backgroundColor: "#4056A1" }}>
+            <div className="container-fluid" style={{ backgroundColor: "#265077" }}>
                 <Navbar dark expand="lg" style={{ cursor: "pointer" }}>
                     <NavbarBrand onClick={() => { history.push("/") }}>Nextagram</NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                {/* Search Input */}
+                                <Form inline onSubmit={handleSubmit}>
+                                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                                        <Input onChange={handleChange} type="text" name="user" placeholder="Type username" />
+                                        {/* // comment out --> this.setState({password: e.target.value}); */}
+                                    </FormGroup>
+                                    <Button>Search</Button>
+                                </Form>
+                            </NavItem>
                             <NavItem>
                                 <NavLink onClick={() => { history.push("/users") }}>Users</NavLink>
                             </NavItem>
@@ -100,14 +110,7 @@ const NaviBar = ({ loggedIn, setLoggedIn }) => {
                         </Nav>
                     </Collapse>
                 </Navbar>
-                {/* Search Input */}
-                <Form inline onSubmit={handleSubmit}>
-                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                        <Input onChange={handleChange} type="text" name="user" placeholder="Type username" />
-                        {/* // comment out --> this.setState({password: e.target.value}); */}
-                    </FormGroup>
-                    <Button>Search</Button>
-                </Form>
+
             </div>
             <ModalForm
                 isOpen={showModal}

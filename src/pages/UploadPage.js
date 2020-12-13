@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, FormGroup, Input, FormText, Button } from 'reactstrap';
+import { Form, FormGroup, Input, FormText, Button, Container } from 'reactstrap';
 import axios from 'axios'
 
 const UploadPage = () => {
@@ -8,8 +8,8 @@ const UploadPage = () => {
     const [message, setMessage] = useState('')
 
     return (
-        <div>
-            <h1>Upload your image!</h1>
+        <Container>
+            <h1 className="mt-3">Upload your image!</h1>
             {/* The function to call on submit goes here */}
             <Form onSubmit={
                 (e) => {
@@ -44,36 +44,36 @@ const UploadPage = () => {
                             (e) => {
                                 setPreviewImage(URL.createObjectURL(e.target.files[0]))
                                 setImageFile(e.target.files[0])
-                                setImageFile(e.target.files[0])
                                 // setTextInput(e.target.value)
                             }
-                            // Th e function to call when you have selected a file will be called here
+                            // The function to call when you have selected a file will be called here
                         }
                     />
                     <FormText color="muted">
                         Make sure the image being uploaded is a supported format.</FormText>
                 </FormGroup>
+
+                {/* Image Preview */}
+                <div className="card mt-2 mb-2">
+                    {previewImage ? (
+                        <img
+                            src={previewImage}
+                            alt="your upload"
+                            width="30%"
+                            height="30%"
+                            class="d-block mx-auto py-2"
+                        />
+                    ) : (
+                            <h3 className="text-center">
+                                {message ? message : "Live Preview"}
+                            </h3>
+                        )}
+                </div>
                 <Button type="submit" color="primary">
                     Upload
                 </Button>
             </Form>
-
-            {/* Image Preview */}
-            <div className="card">
-                {previewImage ? (
-                    <img
-                        src={previewImage}
-                        alt="your upload"
-                        width="20%"
-                        height="20%"
-                    />
-                ) : (
-                        <h3 className="text-center">
-                            {message ? message : "Live Preview"}
-                        </h3>
-                    )}
-            </div>
-        </div >
+        </Container >
     )
 }
 
