@@ -76,6 +76,14 @@ const NaviBar = ({ loggedIn, setLoggedIn }) => {
                             <NavItem>
                                 <NavLink onClick={() => { history.push("/users") }}>Users</NavLink>
                             </NavItem>
+                            {
+                                loggedIn ?
+                                    <NavItem>
+                                        <NavLink style={{ cursor: "pointer" }} onClick={() => { history.push("/profile") }}>My Profile</NavLink>
+                                    </NavItem>
+                                    :
+                                    null
+                            }
                             <NavItem>
                                 {/* LOGIN MODAL */}
                                 {/* <ModalForm isLogin={isLogin} setIsLogin={setIsLogin}>Sign In</ModalForm> */}
