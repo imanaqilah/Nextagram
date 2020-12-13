@@ -18,16 +18,15 @@ const UserImage = ({ userId }) => {
             .catch(error => {
                 console.log(error)
             })
-    }, [])
+    }, [userId])
 
     return (
         userImages.map(userImage => {
             return (
-                <div className="col-sm-4 mb-2">
+                <div className="col-sm-4 mb-2" key={userImage.id}>
                     {/* <CardImg key={userImage.id} src={userImage.url} className="feed-picture" /> */}
                     {/* Lazy loading */}
                     <Image
-                        key={userImage.id}
                         src={userImage.url}
                         className='feed-picture'
                         alt='My awesome image'

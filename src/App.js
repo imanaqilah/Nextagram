@@ -22,7 +22,7 @@ function App() {
       <NaviBar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
 
       {/* onClick={() => {
-        setIsLogin(true) */}
+          setIsLogin(true) */}
       {/* <Link to="/">Home</Link> */}
       {/* We temporarily hardcode this to user id 1 */}
       {/* <Link to="/profile">My Profile</Link> */}

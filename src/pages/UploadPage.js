@@ -63,8 +63,9 @@ const UploadPage = () => {
                 {previewImage ? (
                     <img
                         src={previewImage}
-                        width="50%"
-                        height="50%"
+                        alt="your upload"
+                        width="20%"
+                        height="20%"
                     />
                 ) : (
                         <h3 className="text-center">

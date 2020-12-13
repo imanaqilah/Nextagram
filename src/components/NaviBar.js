@@ -66,39 +66,41 @@ const NaviBar = ({ loggedIn, setLoggedIn }) => {
     }
 
     return (
-        <div className="container-fluid d-flex justify-content-between">
-            <Navbar color="light" light expand="md" style={{ cursor: "pointer" }}>
-                <NavbarBrand onClick={() => { history.push("/") }}>Nextagram</NavbarBrand>
-                <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
-                    <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <NavLink onClick={() => { history.push("/users") }}>Users</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            {/* LOGIN MODAL */}
-                            {/* <ModalForm isLogin={isLogin} setIsLogin={setIsLogin}>Sign In</ModalForm> */}
-                            {
-                                loggedIn ?
-                                    <NavLink style={{ cursor: "pointer" }} onClick={() => handleLogout()}>Log out</NavLink>
-                                    :
-                                    <NavLink style={{ cursor: "pointer" }} onClick={() => { toggleModal(); setIsLogin(true) }} >Log in</NavLink>
-                            }
-                        </NavItem>
-                        {/* <NavItem>
-                            <NavLink href="/components/">Sign Up</NavLink>
-                        </NavItem> */}
-                    </Nav>
-                </Collapse>
-            </Navbar>
-            {/* Search Input */}
-            <Form inline onSubmit={handleSubmit}>
-                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                    <Input onChange={handleChange} type="text" name="user" placeholder="Type username" />
-                    {/* // comment out --> this.setState({password: e.target.value}); */}
-                </FormGroup>
-                <Button>Search</Button>
-            </Form>
+        <div>
+            <div className="container-fluid d-flex justify-content-between" style={{ backgroundColor: "#4056A1" }}>
+                <Navbar dark expand="lg" style={{ cursor: "pointer" }}>
+                    <NavbarBrand onClick={() => { history.push("/") }}>Nextagram</NavbarBrand>
+                    <NavbarToggler onClick={toggle} />
+                    <Collapse isOpen={isOpen} navbar>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink onClick={() => { history.push("/users") }}>Users</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                {/* LOGIN MODAL */}
+                                {/* <ModalForm isLogin={isLogin} setIsLogin={setIsLogin}>Sign In</ModalForm> */}
+                                {
+                                    loggedIn ?
+                                        <NavLink style={{ cursor: "pointer" }} onClick={() => handleLogout()}>Log out</NavLink>
+                                        :
+                                        <NavLink style={{ cursor: "pointer" }} onClick={() => { toggleModal(); setIsLogin(true) }} >Log in</NavLink>
+                                }
+                            </NavItem>
+                            {/* <NavItem>
+                                <NavLink href="/components/">Sign Up</NavLink>
+                            </NavItem> */}
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+                {/* Search Input */}
+                <Form inline onSubmit={handleSubmit}>
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                        <Input onChange={handleChange} type="text" name="user" placeholder="Type username" />
+                        {/* // comment out --> this.setState({password: e.target.value}); */}
+                    </FormGroup>
+                    <Button>Search</Button>
+                </Form>
+            </div>
             <ModalForm
                 isOpen={showModal}
                 toggle={toggleModal}
@@ -111,7 +113,7 @@ const NaviBar = ({ loggedIn, setLoggedIn }) => {
 }
 
 
-{/* {
+/* {
                     isLogin
                         ? <ModalForm
                             isOpen={showModal}
@@ -127,7 +129,7 @@ const NaviBar = ({ loggedIn, setLoggedIn }) => {
                             isLogin={isLogin}
                             toggleIsLogin={toggleIsLogin}
                         />
-                } */}
+                } */
 
 
 export default NaviBar;

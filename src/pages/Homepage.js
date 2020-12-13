@@ -34,31 +34,35 @@ function Homepage() {
     }
 
     return (
-        <div className="d-flex flex-wrap" style={{ margin: "10px" }}>
-            {
-                users.map(user => {
-                    return (
-                        <div key={user.id} className="row" style={{ backgroundColor: "#2A1B3D", marginBottom: "10px" }}>
-                            <div className="col-2">
-                                <CardImg src={user.profileImage} style={{ width: "40%", border: "3px solid white", margin: "5px" }} />
+        <div>
+            <div className="d-flex flex-wrap" style={{ margin: "10px" }}>
+                {
+                    users.map(user => {
+                        return (
+                            <div key={user.id} className="row" style={{ marginBottom: "10px" }}>
+                                <div className="col-2" style={{ backgroundColor: "#eee2dc" }}>
+                                    <div>
+                                        <CardImg src={user.profileImage} style={{ width: "40%", border: "3px solid white", margin: "5px" }} />
+                                    </div>
 
-                                <CardBody>
-                                    {/* <CardTitle>{user.username}</CardTitle> */}
-                                    <Link to={`/profile/${user.id}`}>{user.username}</Link>
-                                    {/* <Button onClick={press} color="primary">See More</Button>{' '} */}
-                                </CardBody>
-                            </div>
-                            <div className="col-10" >
-                                <div className="row">
-                                    <UserImage userId={user.id} />
+                                    <CardBody>
+                                        {/* <CardTitle>{user.username}</CardTitle> */}
+                                        <Link to={`/profile/${user.id}`}>{user.username}</Link>
+                                        {/* <Button onClick={press} color="primary">See More</Button>{' '} */}
+                                    </CardBody>
+                                </div>
+                                <div className="col-10" style={{ marginTop: "10px" }} >
+                                    <div className="row">
+                                        <UserImage userId={user.id} />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    )
+                        )
 
-                })
-            }
-        </div >
+                    })
+                }
+            </div >
+        </div>
     );
 }
 

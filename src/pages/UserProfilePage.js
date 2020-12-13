@@ -2,9 +2,9 @@ import UserImage from '../components/UserImage.js'
 import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Card, CardImg, CardBody, CardTitle, Button } from 'reactstrap';
+import { CardImg, CardBody } from 'reactstrap';
 
-export default () => {
+const UserProfilePage = () => {
     const match = useParams();
     const [user, setUser] = useState([]);
 
@@ -20,7 +20,7 @@ export default () => {
             .catch(error => {
                 console.log(error)
             })
-    }, [])
+    }, [match.id])
 
     // return <h1>Profile Page of USER ID: {match.id}</h1>
     return (
@@ -40,3 +40,5 @@ export default () => {
 
     )
 }
+
+export default UserProfilePage;

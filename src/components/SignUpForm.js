@@ -63,7 +63,7 @@ const SignUpForm = ({ toggleIsLogin, toggle }) => {
                     <Username username={username} setUsername={setUsername} />
                     <Email email={email} setEmail={setEmail} />
                     <Password password={password} setPassword={setPassword} />
-                    <p>Already a member? <a href="#" onClick={(e) => {
+                    <p>Already a member? <a href="/#" onClick={(e) => {
                         e.preventDefault()
                         toggleIsLogin()
                     }}>Log in here.</a></p>

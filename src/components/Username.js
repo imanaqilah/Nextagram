@@ -76,7 +76,7 @@ const Username = ({ username, setUsername }) => {
     return (
         <FormGroup>
             <Label for="username">Username</Label>
-            <Input type="username" name="username" id="username" value={username} onChange={(e) => { setUsername(e.target.value) }} onChange={handleUsernameInput}
+            <Input type="username" name="username" id="username" value={username} onChange={(e) => { setUsername(e.target.value); handleUsernameInput(); }}
                 {...getInputProp()} />
             {getFormFeedback()}
             <FormText>Enter a username between 6 and 20 characters</FormText>

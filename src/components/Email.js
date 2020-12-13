@@ -51,7 +51,7 @@ const Email = ({ email, setEmail }) => {
     return (
         <FormGroup>
             <Label for="email">Email</Label>
-            <Input type="email" name="email" id="email" value={email} onChange={(e) => { setEmail(e.target.value) }} onChange={handleEmailInput} {...getEmailProp()}
+            <Input type="email" name="email" id="email" value={email} onChange={(e) => { setEmail(e.target.value); handleEmailInput() }} {...getEmailProp()}
             />
             {getEmailFormFeedback()}
             <FormText>example@example.com</FormText>
