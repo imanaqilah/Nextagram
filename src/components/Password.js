@@ -45,7 +45,7 @@ const Password = ({ password, setPassword }) => {
     return (
         <FormGroup>
             <Label for="password">Password</Label>
-            <Input type="password" name="password" id="password" value={password} onChange={(e) => { setPassword(e.target.value); handlePasswordInput() }} {...getPasswordProp()}
+            <Input type="password" name="password" id="password" value={password} onChange={(e) => { setPassword(e.target.value); handlePasswordInput(e) }} {...getPasswordProp()}
             />
             {getPasswordFormFeedback()}
             <FormText>Password must have at least 6 characters</FormText>
