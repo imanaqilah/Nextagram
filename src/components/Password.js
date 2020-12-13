@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     FormGroup,
     Label,
@@ -14,16 +14,16 @@ const Password = ({ password, setPassword }) => {
     }
 
     //  this one is to check password input - if less than 6 characters 
-    const [passwordValid, setPasswordValid] = useState(true)
+    // const [passwordValid, setPasswordValid] = useState(true)
     const getPasswordProp = () => {
         if (!password.length) {
             return null;
         }
         if (password.length <= 6) {
-            setPasswordValid(false)
+            // setPasswordValid(false)
             return { invalid: true };
         } else {
-            setPasswordValid(true)
+            // setPasswordValid(true)
             return { valid: true }
         }
     };
@@ -35,11 +35,13 @@ const Password = ({ password, setPassword }) => {
         if (password.length <= 6) {
             return <FormFeedback invalid>The password is too short</FormFeedback>
         }
-        if (passwordValid) {
+        else
             return <FormFeedback valid></FormFeedback>
-        } else {
-            return <FormFeedback invalid></FormFeedback>
-        }
+        // if (passwordValid) {
+        //     return <FormFeedback valid></FormFeedback>
+        // } else {
+        //     return <FormFeedback invalid></FormFeedback>
+        // }
     };
 
     return (
