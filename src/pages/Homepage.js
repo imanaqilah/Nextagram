@@ -34,34 +34,31 @@ function Homepage() {
     }
 
     return (
-        <div>
-            <div className="d-flex flex-wrap" style={{ margin: "10px" }}>
-                {
-                    users.map(user => {
-                        return (
-                            <div key={user.id} className="row" style={{ marginBottom: "10px" }}>
-                                <div className="col-2" style={{ backgroundColor: "#eee2dc" }}>
-                                    <div>
-                                        <CardImg src={user.profileImage} style={{ width: "40%", border: "3px solid white", margin: "5px" }} />
-                                    </div>
+        <div className="container-fluid">
+            {
+                users.map(user => {
+                    return (
+                        <div key={user.id} className="row border border-0 mb-3 pt-3 pb-3 rounded">
+                            <div className="col-2" style={{ backgroundColor: "#eee2dc" }}>
+                                <Link className="mt-2" to={`/profile/${user.id}`}>{user.username}</Link>
+                                <img className="profile-image-avatar rounded-circle" src={user.profileImage} />
 
-                                    <CardBody>
-                                        {/* <CardTitle>{user.username}</CardTitle> */}
-                                        <Link to={`/profile/${user.id}`}>{user.username}</Link>
-                                        {/* <Button onClick={press} color="primary">See More</Button>{' '} */}
-                                    </CardBody>
-                                </div>
-                                <div className="col-10" style={{ marginTop: "10px" }} >
-                                    <div className="row">
-                                        <UserImage userId={user.id} />
-                                    </div>
+                                {/* <CardBody>
+                            <CardTitle>{user.username}</CardTitle>
+                            
+                            <Button onClick={press} color="primary">See More</Button>{' '}
+                        </CardBody> */}
+                            </div>
+                            <div className="col" style={{ backgroundColor: "#ffffff" }}>
+                                <div className="row">
+                                    <UserImage userId={user.id} />
                                 </div>
                             </div>
-                        )
+                        </div >
+                    )
 
-                    })
-                }
-            </div >
+                })
+            }
         </div>
     );
 }

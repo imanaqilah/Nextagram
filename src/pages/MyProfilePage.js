@@ -27,10 +27,16 @@ const MyProfilePage = () => {
     console.log(user.id)
 
     return (
-        <div>
-            <h1>This is @{user.username}'s Profile Page</h1>
-            <Button onClick={() => { history.push("/upload") }}>Upload Images</Button>
-            <UserImage userId={user.id} />
+        <div className="container-fluid">
+            <div className="row mb-5">
+                <div className="col-sm-4 mt-2">
+                    <h3>This is @{user.username}'s Profile Page</h3>
+                    <Button onClick={() => { history.push("/upload") }}>Upload Images</Button>
+                </div>
+            </div>
+            <div className="row">
+                <UserImage userId={user.id} />
+            </div>
         </div>
 
     )

@@ -3,7 +3,7 @@ import logo from '../assets/Spinner-1s-200px.gif';
 const LoadingIndicator = () => {
 
     return (
-        <div>
+        <div style={{ textAlign: "center" }}>
             <img src={logo} alt="loading..." />
         </div>
     )

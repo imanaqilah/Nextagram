@@ -24,13 +24,17 @@ const UserProfilePage = () => {
 
     // return <h1>Profile Page of USER ID: {match.id}</h1>
     return (
-        <div>
-            <div className="col-3" >
-                <CardImg src={user.profileImage} style={{ width: "40%", border: "3px solid white", margin: "5px" }} />
-                <CardBody>
-                    {/* <CardTitle>{user.username}</CardTitle> */}
-                    <Link to={`/profile/${user.id}`}>{user.username}</Link>
-                </CardBody>
+        <div className="container-fluid">
+            <div className="row" >
+                <div className="col-sm-2 mt-3 mb-3">
+                    <CardImg className="profile-image-avatar rounded-circle" src={user.profileImage} />
+                </div>
+                <div className="col-sm-3">
+                    <CardBody>
+                        {/* <CardTitle>{user.username}</CardTitle> */}
+                        <Link to={`/profile/${user.id}`}>{user.username}</Link>
+                    </CardBody>
+                </div>
             </div>
             <div className="row">
                 <UserImage userId={match.id} />
