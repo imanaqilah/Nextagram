@@ -80,7 +80,8 @@ const NaviBar = ({ loggedIn, setLoggedIn }) => {
                                         <Input onChange={handleChange} type="text" name="user" placeholder="Type username" />
                                         {/* // comment out --> this.setState({password: e.target.value}); */}
                                     </FormGroup>
-                                    <Button>Search</Button>
+                                    <Button color="info">Search</Button>{' '}
+                                    {/* <Button>Search</Button> */}
                                 </Form>
                             </NavItem>
                             <NavItem>

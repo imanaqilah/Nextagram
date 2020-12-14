@@ -33,7 +33,7 @@ const MyProfilePage = () => {
                 </div>
                 <div className="col-sm-3 mt-4">
                     <h3>@{user.username}</h3>
-                    <Button onClick={() => { history.push("/upload") }}>Upload Images</Button>
+                    <Button color="info" onClick={() => { history.push("/upload") }}>Upload Images</Button>{' '}
                 </div>
             </div>
             <div className="row">

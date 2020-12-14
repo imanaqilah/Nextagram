@@ -13,6 +13,7 @@ const UserImage = ({ userId }) => {
             .then(result => {
                 // passing result.data to useState array []
                 setUserImages(result.data)
+                console.log(result.data)
 
             })
             .catch(error => {
