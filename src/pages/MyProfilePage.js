@@ -4,7 +4,6 @@ import { Button } from 'reactstrap'
 import UserImage from '../components/UserImage.js';
 import { useHistory } from 'react-router-dom';
 
-
 const MyProfilePage = () => {
     const [user, setUser] = useState({})
     const history = useHistory()
