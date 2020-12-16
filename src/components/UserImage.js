@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Image from 'react-graceful-image';
+import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom'
+import Comments from './Comments.js'
 
 
 const UserImage = ({ userId }) => {
 
     const [userImages, setUserImages] = useState([]);
+
+    const toggleModal = () => {
+        setShowModal(!showModal)
+    }
+
+    const [showModal, setShowModal] = useState(false)
 
     useEffect(() => {
         axios.get(`https://insta.nextacademy.com/api/v2/images?userId=${userId}`)
@@ -31,7 +40,15 @@ const UserImage = ({ userId }) => {
                         className='feed-picture'
                         alt='My awesome image'
                     />
+                    <Link style={{ cursor: "pointer" }} onClick={() => { toggleModal() }} >Comment</Link>
+                    <Comments
+                        isOpen={showModal}
+                        toggle={toggleModal}
+                        imageUrl={userImage.url}
+                        userId={userId}
+                    />
                 </div>
+
             )
         })
     )

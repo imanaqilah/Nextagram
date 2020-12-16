@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import { useState } from 'react';
 import MyProfilePage from "./pages/MyProfilePage.js"
 import UploadPage from './pages/UploadPage.js';
+import Comments from '../src/components/Comments.js';
 
 function App() {
   /** 
@@ -31,16 +32,25 @@ function App() {
         <Homepage />
         {/* <Homepage users={users}></Homepage> */}
       </Route>
+
       <Route path="/profile/:id">
         <UserProfilePage></UserProfilePage>
       </Route>
+
       <Route path="/users">
         <Homepage />
       </Route>
+
       <Route exact path="/profile">
         <MyProfilePage />
       </Route>
+
       <Route exact path="/upload" component={UploadPage}></Route>
+
+      <Route path="/image/:id/comment/:url">
+        <Comments />
+      </Route>
+
       <ToastContainer />
     </div>
   )
